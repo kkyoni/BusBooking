@@ -1,0 +1,115 @@
+.logo-container {
+    width: 40%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+  
+  .main {
+    width: 66%;
+    margin: auto;
+    padding-top: 10%;
+  }
+  
+  .inner-div {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  @media screen and (max-width: 1200px) {
+    .inner-div {
+      font-size: 14px;
+    }
+  }
+  .inner-textdiv1 {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  .inner-textdiv2 {
+    margin: auto;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .inner-small_div {
+    font-size: 14px;
+    margin: auto;
+    margin-top: 16px;
+    text-align: center;
+    color: #959595;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .inner-textdiv1 {
+      width: 100%;
+    }
+    .inner-small_div {
+      font-size: 10px;
+    }
+  }
+  
+  .img-container {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+  }
+  
+  .logo-img {
+    width: 66%;
+    max-width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .logo-img {
+      width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .logo-img {
+      width: 50%;
+    }
+  }
+  
+  .auth-btn {
+    display: block;
+    margin: 0 auto;
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .auth-btn {
+      padding: 5px 10px;
+      font-size: 10px;
+    }
+  }
+  
+  .auth-custom-scrollbar {
+    position: relative;
+    height: calc(100vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .auth-custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .auth-custom-scrollbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  .auth-custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ee3e38;
+    border-radius: 10px;
+  }
+  
+  .auth-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ee3e38;
+  }
+  

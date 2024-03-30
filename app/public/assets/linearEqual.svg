@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="vuesax-linear-element-equal 4" clip-path="url(#clip0_2885_1633)">
+<g id="vuesax/linear/element-equal">
+<g id="element-equal">
+<path id="Vector" d="M14.6667 5.5135V2.82016C14.6667 1.76016 14.24 1.3335 13.18 1.3335H10.4867C9.42667 1.3335 9 1.76016 9 2.82016V5.5135C9 6.5735 9.42667 7.00016 10.4867 7.00016H13.18C14.24 7.00016 14.6667 6.5735 14.6667 5.5135Z" stroke="#292D32" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M6.99967 5.68016V2.6535C6.99967 1.7135 6.57301 1.3335 5.51301 1.3335H2.81967C1.75967 1.3335 1.33301 1.7135 1.33301 2.6535V5.6735C1.33301 6.62016 1.75967 6.9935 2.81967 6.9935H5.51301C6.57301 7.00016 6.99967 6.62016 6.99967 5.68016Z" stroke="#292D32" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M6.99967 13.18V10.4867C6.99967 9.42667 6.57301 9 5.51301 9H2.81967C1.75967 9 1.33301 9.42667 1.33301 10.4867V13.18C1.33301 14.24 1.75967 14.6667 2.81967 14.6667H5.51301C6.57301 14.6667 6.99967 14.24 6.99967 13.18Z" stroke="#292D32" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M10 10.3335H14" stroke="#292D32" stroke-linecap="round"/>
+<path id="Vector_5" d="M10 13H14" stroke="#292D32" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2885_1633">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
