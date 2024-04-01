@@ -293,11 +293,21 @@ class BusController extends Controller
             if (!$user) {
                 return response()->json(['status' => 'error', 'message' => 'You are not able to log in from this application...'], 200);
             }
-            $busData = BusConfirm::with(['bus_seat_list'])->where('user_id',$user->id)->get();
+            $query = BusConfirm::with(['bus_list', 'bus_seat_list'])->where('user_id', $user->id);
+
+            if ($request->type === 'confirm') {
+                $query->where('booking_status', 'confirm');
+            } elseif ($request->type === 'pending') {
+                $query->where('booking_status', 'pending');
+            }
+
+            $busData = $query->take($request->count)->get();
+            $busDataCount = $query->count();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Bus List View Successful',
-                'data' => $busData
+                'data' => $busData,
+                'count' => $busDataCount
             ]);
         } catch (Exception $e) {
             return response()->json(['status' => 'error', 'message' => 'Something went wrong...'], 200);

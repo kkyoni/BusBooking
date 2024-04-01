@@ -14,8 +14,8 @@ class BusSeeder extends Seeder
     public function run(): void
     {
         Bus::create([
-            'from' => 'mumbai',
-            'to' => 'surat',
+            'from' => 'Patan',
+            'to' => 'Surat',
             'bus_operators' => '1',
             'time' => '12:00',
             'duration' => '06h 32m',
@@ -24,8 +24,8 @@ class BusSeeder extends Seeder
             'bus_type' => '1',
         ]);
         Bus::create([
-            'from' => 'mumbai',
-            'to' => 'surat',
+            'from' => 'Mumbai',
+            'to' => 'Surat',
             'bus_operators' => '3',
             'time' => '12:00',
             'duration' => '06h 32m',
@@ -34,8 +34,8 @@ class BusSeeder extends Seeder
             'bus_type' => '2',
         ]);
         Bus::create([
-            'from' => 'mumbai',
-            'to' => 'surat',
+            'from' => 'Mumbai',
+            'to' => 'Surat',
             'bus_operators' => '4',
             'time' => '12:00',
             'duration' => '06h 32m',
@@ -44,8 +44,8 @@ class BusSeeder extends Seeder
             'bus_type' => '3',
         ]);
         Bus::create([
-            'from' => 'mumbai',
-            'to' => 'surat',
+            'from' => 'Mumbai',
+            'to' => 'Surat',
             'bus_operators' => '2',
             'time' => '12:00',
             'duration' => '06h 32m',
@@ -54,8 +54,8 @@ class BusSeeder extends Seeder
             'bus_type' => '3',
         ]);
         Bus::create([
-            'from' => 'mumbai',
-            'to' => 'surat',
+            'from' => 'Mumbai',
+            'to' => 'Surat',
             'bus_operators' => '5',
             'time' => '12:00',
             'duration' => '06h 32m',

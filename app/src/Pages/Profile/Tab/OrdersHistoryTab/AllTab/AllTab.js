@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { BusBookingOrderDetailsListActionHandler } from '../../../../../Redux/Actions/user/BusBookingOrderDetailsList';
+import { useDispatch, useSelector } from 'react-redux';
+import { FaCircleCheck } from "react-icons/fa6";
+import { FaTimesCircle } from "react-icons/fa";
+import { FaEllipsis } from "react-icons/fa6";
+import { Button } from 'antd';
 function AllTab() {
+    let dispatch = useDispatch();
+    const busbookingorderlistData = useSelector((state) => state.BusBookingOrderDetailsListData?.bus_booking_order_list_data);
+    useEffect(() => {
+        dispatch(BusBookingOrderDetailsListActionHandler('all', 1));
+    }, []);
+    const handleViewMore = (count) => {
+        dispatch(BusBookingOrderDetailsListActionHandler('all', count));
+    }
     return (
         <>
             <div className="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
@@ -7,59 +21,31 @@ function AllTab() {
                     <table className="table table-hover border">
                         <thead>
                             <tr>
+                                <th>Invoice ID</th>
                                 <th>Date</th>
-                                <th>Description</th>
-                                <th>Order ID</th>
+                                <th>From - To</th>
                                 <th className="text-center">Status</th>
                                 <th className="text-end">Amount</th>
-                                <th className="text-center"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="align-middle">06/06/2018</td>
-                                <td className="align-middle"><img src="images/vodafone.jpg" className="img-thumbnail d-inline-flex me-1" /> <span className="text-1 d-inline-flex">Recharge of Vodafone Mobile 9696969696</span></td>
-                                <td className="align-middle">5286977475</td>
-                                <td className="align-middle text-center"><i className="fas fa-check-circle text-4 text-success" data-bs-toggle="tooltip" title="Your order is Successful"></i></td>
-                                <td className="align-middle text-end">$150</td>
-                                <td className="align-middle text-center"><a href="#" data-bs-toggle="tooltip" title="Repeat Order"><i className="fas fa-redo-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td className="align-middle">02/06/2018</td>
-                                <td className="align-middle"><img src="images/indigo.png" className="img-thumbnail d-inline-flex me-1" /> <span className="text-1 d-inline-flex">Booking of Delhi to Sydney flight</span></td>
-                                <td className="align-middle">5136907172</td>
-                                <td className="align-middle text-center"><i className="fas fa-check-circle text-4 text-success" data-bs-toggle="tooltip" title="Your order is Successful"></i></td>
-                                <td className="align-middle text-end">$980</td>
-                                <td className="align-middle text-center"><a href="#" data-bs-toggle="tooltip" title="Repeat Order"><i className="fas fa-redo-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td className="align-middle">31/05/2018</td>
-                                <td className="align-middle"><img src="images/vodafone.jpg" className="img-thumbnail d-inline-flex me-1" /> <span className="text-1 d-inline-flex">Bill Payment of Vodafone Mobile 9898989898</span></td>
-                                <td className="align-middle">1072317951</td>
-                                <td className="align-middle text-center"><i className="fas fa-ellipsis-h text-4 text-info" data-bs-toggle="tooltip" title="Your order is in Progress"></i></td>
-                                <td className="align-middle text-end">$99</td>
-                                <td className="align-middle text-center"></td>
-                            </tr>
-                            <tr>
-                                <td className="align-middle">25/05/2018</td>
-                                <td><div className="d-lg-flex align-items-center"> <span className="img-thumbnail d-inline-flex text-8 p-2 me-2"><i className="fas fa-bus"></i></span> <span className="text-1 d-inline-flex">Booking of Mumbai to Surat Bus</span> </div></td>
-                                <td className="align-middle">4103520927</td>
-                                <td className="align-middle text-center"><i className="fas fa-check-circle text-4 text-success" data-bs-toggle="tooltip" title="Your order is Successful"></i></td>
-                                <td className="align-middle text-end">$450</td>
-                                <td className="align-middle text-center"><a href="#" data-bs-toggle="tooltip" title="Repeat Order"><i className="fas fa-redo-alt"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td className="align-middle">21/05/2018</td>
-                                <td className="align-middle"><img src="images/vodafone.jpg" className="img-thumbnail d-inline-flex me-1" /> <span className="text-1 d-inline-flex">Recharge of Vodafone Mobile 9898989898</span></td>
-                                <td className="align-middle">3079317986</td>
-                                <td className="align-middle text-center"><i className="fas fa-times-circle text-4 text-danger" data-bs-toggle="tooltip" title="Your order is Failed"></i></td>
-                                <td className="align-middle text-end">$280</td>
-                                <td className="align-middle text-center"><a href="#" data-bs-toggle="tooltip" title="Retry Order"><i className="fas fa-redo-alt "></i></a></td>
-                            </tr>
+                            {busbookingorderlistData.data && busbookingorderlistData.data.map((busbookingorderlist) => (
+                                <tr key={busbookingorderlist.id}>
+                                    <td className="align-middle">{busbookingorderlist.invoice_id}</td>
+                                    <td className="align-middle">{busbookingorderlist.booking_start_date}</td>
+                                    <td className="align-middle">{busbookingorderlist.bus_list.map(bus => `${bus.from} to ${bus.to}`).join(', ')}</td>
+                                    <td className="align-middle text-center">
+                                        {busbookingorderlist.booking_status === 'confirm' ? <FaCircleCheck className='text-4 text-success' /> : null}
+                                        {busbookingorderlist.booking_status === 'cancle' ? <FaTimesCircle className='text-4 text-danger' /> : null}
+                                        {busbookingorderlist.booking_status === 'pending' ? <FaEllipsis className='text-4 text-info' /> : null}
+                                    </td>
+                                    <td className="align-middle text-end">${busbookingorderlist.price}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
-                <div className="text-center pt-3"><a href="#" className="btn btn-outline-primary shadow-none">View More</a></div>
+                {busbookingorderlistData?.data?.length >= busbookingorderlistData?.count ? <div className="text-center pt-3"><Button className="btn btn-outline-primary shadow-none" disabled style={{ height: '50px' }}>View More</Button></div> : <div className="text-center pt-3"><Button className="btn btn-outline-primary shadow-none" style={{ height: '50px' }} onClick={() => handleViewMore(busbookingorderlistData?.data?.length + busbookingorderlistData?.data?.length)}>View More</Button></div>}
             </div>
         </>
     );

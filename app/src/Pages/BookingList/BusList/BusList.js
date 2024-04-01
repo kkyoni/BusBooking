@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Pagination, Form, Input, DatePicker } from 'antd';
 import './BusModel.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { BusViewBookingActionHandler } from '../../../Redux/Actions/user/BusViewBooking';
 import { BusBookingListActionHandler } from '../../../Redux/Actions/user/BusBookingList';
 import { BusTypeListActionHandler } from '../../../Redux/Actions/user/BusTypeActionList';
@@ -120,7 +120,7 @@ function BusList() {
                         </div>
                         <div className="col-md-4">
                             <ul className="breadcrumb justify-content-start justify-content-md-end mb-0">
-                                <li><a href="index.html">Home</a></li>
+                                <li><Link to={"/"}>Home</Link></li>
                                 <li><a href="booking-bus.html">Bus</a></li>
                                 <li className="active">Bus List Page</li>
                             </ul>
@@ -134,21 +134,15 @@ function BusList() {
                         <div className="row g-3 mb-4">
                             <div className="col-md-6 col-lg">
                                 <div className="position-relative">
-                                    <Form.Item
-                                        name='bus_from'
-                                        rules={[{ required: true, message: 'Please input your From!' }]}>
+                                    <Form.Item name='bus_from' rules={[{ required: true, message: 'Please input your From!' }]}>
                                         <Input placeholder='Enter your From' className="form-control ui-autocomplete-input" id="busFrom" />
                                         <span className="icon-inside"><FaMapMarkerAlt /></span>
                                     </Form.Item>
-                                    {/* <input type="text" className="form-control ui-autocomplete-input" id="busFrom" required="" placeholder="From" autocomplete="off" />
-                                    <span className="icon-inside"><i className="fas fa-map-marker-alt"></i></span> */}
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg">
                                 <div className="position-relative">
-                                    <Form.Item
-                                        name='bus_to'
-                                        rules={[{ required: true, message: 'Please input your To!' }]}>
+                                    <Form.Item name='bus_to' rules={[{ required: true, message: 'Please input your To!' }]}>
                                         <Input placeholder='Enter your From' className="form-control ui-autocomplete-input" id="busTo" />
                                         <span className="icon-inside"><FaMapMarkerAlt /></span>
                                     </Form.Item>
@@ -156,9 +150,7 @@ function BusList() {
                             </div>
                             <div className="col-md-6 col-lg">
                                 <div className="position-relative">
-                                    <Form.Item
-                                        name='bus_depart'
-                                        rules={[{ required: true, message: 'Please input your Depart Date!' }]}>
+                                    <Form.Item name='bus_depart' rules={[{ required: true, message: 'Please input your Depart Date!' }]}>
                                         <DatePicker placeholder='Depart Date' className="form-control" id="busDepart" />
                                     </Form.Item>
                                 </div>

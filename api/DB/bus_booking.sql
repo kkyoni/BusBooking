@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2024 at 09:20 AM
+-- Generation Time: Apr 01, 2024 at 03:46 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -224,7 +224,7 @@ CREATE TABLE `card` (
 --
 
 INSERT INTO `card` (`id`, `card_holder_name`, `card_number`, `card_type`, `expiry_date`, `user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Jaymin Modi', '8282828282', 'Visa', '02/25', '10', '2024-03-29 08:50:38', '2024-03-30 01:47:45', '2024-03-30 01:47:45'),
+(1, 'Jaymin Modi', '8282828282', 'Visa', '02/25', '10', '2024-03-29 08:50:38', '2024-04-01 05:53:42', NULL),
 (2, 'Jaymin Modi', '8282828282', 'MasterCard', '02/25', '10', '2024-03-29 08:50:38', '2024-03-30 01:46:55', NULL),
 (3, 'Jaymin Modi', '8282828282', 'American Express', '02/25', '10', '2024-03-29 08:50:38', '2024-03-30 01:45:39', NULL),
 (4, 'Jaymin Modi', '8282828282', 'Discover', '02/25', '10', '2024-03-29 08:50:38', '2024-03-30 01:40:49', NULL);
@@ -338,7 +338,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `av
 (7, 'Users7', 'Users7@gmail.com', NULL, '$2y$10$fl3VnAXRhJbrE7UsepKaXeDJgS1gtxYcruw1fZV0lwMpNVM/baKVO', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-19 04:02:10', NULL),
 (8, 'Users8', 'Users8@gmail.com', NULL, '$2y$10$mD4ewhyP4cQqJA4hrVRDmeXf0AZfdWcTHoy2Tl/GyvSEANZjwLNui', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-19 04:02:10', NULL),
 (9, 'Users9', 'Users9@gmail.com', NULL, '$2y$10$NhP2NOM8rr395BPKSmPJx.66k5Q5zBqyOaZ7ZCDSPbP6N6N4XV3.W', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-19 04:02:10', NULL),
-(10, 'Jaymin', 'Users@gmail.com', NULL, '$2y$10$MkSeGxi9ItEaG05mdkg3be/3dyM6Qhp4OJkPQ2k/VHegdyJGA2tLO', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-29 01:24:00', NULL),
+(10, 'Jaymin', 'Users@gmail.com', NULL, '$2y$10$zc0givMezUBUFzXIeXhqLuY1r5Ycc8sCht3mpGvGyVvjrwtzH8wpK', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-04-01 07:30:32', NULL),
 (11, 'Users11', 'Users11@gmail.com', NULL, '$2y$10$i7yyfp47O4WhD7r9117lJOpiQCOtl4j2QtUCx.oA62sIH67mrSY8K', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-19 04:02:10', NULL),
 (12, 'Users12', 'Users12@gmail.com', NULL, '$2y$10$9Gx1eMLGTO1JxJS6LVTrhefSjLT38qMb36AssY4sd03PkYhow6VRS', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:10', '2024-03-19 04:02:10', NULL),
 (13, 'Users13', 'Users13@gmail.com', NULL, '$2y$10$kGQE9T6.wnc.InpBvnAJD.Wqcc7By08D0l9k0rIPBdbvyDKaDkONi', 'user.png', 'user', 'active', NULL, '2024-03-19 04:02:11', '2024-03-19 04:02:11', NULL),
@@ -466,7 +466,7 @@ ALTER TABLE `bus_type`
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

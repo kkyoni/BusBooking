@@ -177,15 +177,6 @@ class UserController extends Controller
     -------------------------------------------------------------------------------------------- */
     public function changePassword(Request $request)
     {
-        $validation_array = [
-            'old_password'        => 'required|string|min:6',
-            'new_password'        => 'required|string|min:6',
-            'confirm_password'    => 'required|string|min:6',
-        ];
-        $validation = Validator::make($request->all(), $validation_array);
-        if ($validation->fails()) {
-            return response()->json(['status' => 'error', 'message' => $validation->messages()->first()], 200);
-        }
         try {
             $user = JWTAuth::parseToken()->authenticate();
             if (!$user) {
@@ -193,9 +184,9 @@ class UserController extends Controller
             }
             if ($user !== null) {
                 $password     = $user->password;
-                $old_password = request('old_password');
-                $new_password = request('new_password');
-                $c_password   = request('confirm_password');
+                $old_password = $request->old_password;
+                $new_password = $request->new_password;
+                $c_password   = $request->confirm_password;
                 if ($new_password != $c_password) {
                     return response()->json(['status' => 'error', 'message' => 'Your Password does not match with Above Password']);
                 }
@@ -251,13 +242,28 @@ class UserController extends Controller
                 return response()->json(['status' => 'error', 'message' => "Invalid Token..."], 200);
             }
             // dd($request->all());
-            $card = Card::create([
-                'card_holder_name'   => $request->card_holder_name,
-                'card_number'     => $request->card_number,
-                'card_type'    => $request->card_type,
+            // $card = Card::create([
+            //     'card_holder_name'   => $request->card_holder_name,
+            //     'card_number'     => $request->card_number,
+            //     'card_type'    => $request->card_type,
+            //     'expiry_date' => $request->expiry_date,
+            //     'user_id' => $user->id
+            // ]);
+            $cardData = [
+                'card_holder_name' => $request->card_holder_name,
+                'card_number' => $request->card_number,
+                'card_type' => $request->card_type,
                 'expiry_date' => $request->expiry_date,
                 'user_id' => $user->id
-            ]);
+            ];
+
+            if ($request->id) {
+                // If issetCardId is set, update the existing card record
+                $card = Card::where('id', $request->id)->update($cardData);
+            } else {
+                // If issetCardId is not set, create a new card record
+                $card = Card::firstOrCreate($cardData);
+            }
             $carddateils = Card::find($card->id);
             return response()->json(['status'  => 'success', 'message' => 'User logged out Successfull..!', 'data' => $carddateils]);
         } catch (Exception $e) {
@@ -296,6 +302,23 @@ class UserController extends Controller
             $cardDelete = Card::where('id', $cardId)->first();
             $cardDelete->delete();
             return response()->json(['status'  => 'success', 'message' => 'User Card Delete Successfull..!']);
+        } catch (Exception $e) {
+            return response()->json(['status'  => 'error', 'message' => $e->getMessage()]);
+        }
+    }
+
+    /* -----------------------------------------------------------------------------------------
+    @Description: Function for User Card Delete
+    -------------------------------------------------------------------------------------------- */
+    public function editCard(Request $request)
+    {
+        try {
+            $user = JWTAuth::parseToken()->authenticate();
+            if (!$user) {
+                return response()->json(['status' => 'error', 'message' => "Invalid Token..."], 200);
+            }
+            $editCard = Card::where('id', $request->cardId)->first();
+            return response()->json(['status'  => 'success', 'message' => 'User Card Delete Successfull..!', 'data' => $editCard]);
         } catch (Exception $e) {
             return response()->json(['status'  => 'error', 'message' => $e->getMessage()]);
         }

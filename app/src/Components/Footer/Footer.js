@@ -1,3 +1,10 @@
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 function Footer() {
     return (
         <footer id="footer">
@@ -51,18 +58,18 @@ function Footer() {
                         <p>Subscribe</p>
                         <div className="input-group newsletter">
                             <input className="form-control" placeholder="Your Email Address" name="newsletterEmail" id="newsletterEmail" type="text" />
-                                <button className="btn btn-secondary shadow-none px-3" type="submit">Subscribe</button>
+                            <button className="btn btn-secondary shadow-none px-3" type="submit">Subscribe</button>
                         </div>
                     </div>
                     <div className="col-md-4 d-flex align-items-md-end flex-column">
                         <p>Keep in touch</p>
                         <ul className="social-icons">
-                            <li className="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></li>
-                            <li className="social-icons-twitter"><a data-bs-toggle="tooltip" href="http://www.twitter.com/" target="_blank" title="Twitter"><i className="fab fa-twitter"></i></a></li>
-                            <li className="social-icons-google"><a data-bs-toggle="tooltip" href="http://www.google.com/" target="_blank" title="Google"><i className="fab fa-google"></i></a></li>
-                            <li className="social-icons-linkedin"><a data-bs-toggle="tooltip" href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i className="fab fa-linkedin-in"></i></a></li>
-                            <li className="social-icons-youtube"><a data-bs-toggle="tooltip" href="http://www.youtube.com/" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></li>
-                            <li className="social-icons-instagram"><a data-bs-toggle="tooltip" href="http://www.instagram.com/" target="_blank" title="Instagram"><i className="fab fa-instagram"></i></a></li>
+                            <li className="social-icons-facebook"><Link to="http://www.facebook.com/" target="_blank"><FaFacebookF /></Link></li>
+                            <li className="social-icons-twitter"><Link to="http://www.twitter.com/" target="_blank"><FaTwitter /></Link></li>
+                            <li className="social-icons-google"><Link to="http://www.google.com/" target="_blank"><FaGoogle /></Link></li>
+                            <li className="social-icons-linkedin"><Link to="http://www.linkedin.com/" target="_blank"><FaLinkedinIn /></Link></li>
+                            <li className="social-icons-youtube"><Link to="http://www.youtube.com/" target="_blank"><FaYoutube /></Link></li>
+                            <li className="social-icons-instagram"><Link to="http://www.instagram.com/" target="_blank"><FaInstagram /></Link></li>
                         </ul>
                     </div>
                 </div>
@@ -70,12 +77,11 @@ function Footer() {
             <div className="container">
                 <div className="footer-copyright">
                     <ul className="nav justify-content-center">
-                        <li className="nav-item"> <a className="nav-link active" href="#">About Us</a> </li>
-                        <li className="nav-item"> <a className="nav-link" href="#">Faq</a> </li>
-                        <li className="nav-item"> <a className="nav-link" href="#">Contact</a> </li>
-                        <li className="nav-item"> <a className="nav-link" href="#">Support</a> </li>
-                        <li className="nav-item"> <a className="nav-link" href="#">Terms of Use</a> </li>
-                        <li className="nav-item"> <a className="nav-link" href="#">Privacy Policy</a> </li>
+                        <li className="nav-item"> <Link to={"About-Us"} className="nav-link active">About Us</Link> </li>
+                        <li className="nav-item"> <Link to={"Faq"} className="nav-link">Faq</Link> </li>
+                        <li className="nav-item"> <Link to={"Contact-us"} className="nav-link">Contact</Link> </li>
+                        <li className="nav-item"> <Link to={"Support"} className="nav-link">Support</Link> </li>
+                        <li className="nav-item"> <Link to={"Help"} className="nav-link">Help</Link> </li>
                     </ul>
                     <p className="copyright-text">Copyright © 2022 <a href="#">Quickai</a>. All Rights Reserved.</p>
                 </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
+import { Link } from 'react-router-dom';
 function NotFound() {
     return (
         <>
@@ -11,7 +12,7 @@ function NotFound() {
                         </div>
                         <div className="col-md-4">
                             <ul className="breadcrumb justify-content-start justify-content-md-end mb-0">
-                                <li><a href="index.html">Home</a></li>
+                                <li><Link to={"/"}>Home</Link></li>
                                 <li className="active">404 - Page Not Found</li>
                             </ul>
                         </div>

@@ -9,13 +9,15 @@ import { IoIosRemoveCircle } from "react-icons/io";
 import { notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-function CreditDebitCardsTab({ selectedTabItem,handleTabItemClick }) {
+function CreditDebitCardsTab({ selectedTabItem, handleTabItemClick }) {
     let dispatch = useDispatch();
     let Navigate = useNavigate();
     const [api, contextHolder] = notification.useNotification();
     const [selectedItem, setSelectedItem] = useState(false);
-    const handleAddNewCardModelClick = () => {
+    const [issetCardId, IsSetCardId] = useState(null);
+    const handleAddNewCardModelClick = (cardId) => {
         setSelectedItem(!selectedItem)
+        IsSetCardId(cardId)
     }
     const userCardListData = useSelector((state) => state.UserCardListData?.user_card_list_data);
     const userCardDeleteData = useSelector((state) => state.UserCardDeleteData?.user_card_delete_data);
@@ -35,9 +37,10 @@ function CreditDebitCardsTab({ selectedTabItem,handleTabItemClick }) {
         }
     }, [userCardDeleteData]);
 
-    const handleEditCard = (cardId) => {
+    // const handleEditCard = (cardId) => {
+    //     setSelectedItem(!selectedItem)
+    // }
 
-    }
     const handleDeleteCard = (cardId) => {
         dispatch(UserCardDeleteActionHandler(cardId));
     }
@@ -64,7 +67,7 @@ function CreditDebitCardsTab({ selectedTabItem,handleTabItemClick }) {
                                 {userCardList.card_type === "Discover" ? <img className="ms-auto" src="images/discover.png" alt="visa" title="" /> : null}
                             </p>
                             <div className="account-card-overlay rounded">
-                                <div className="text-light btn-link mx-2" onClick={(e) => handleEditCard(userCardList.id)}>
+                                <div className="text-light btn-link mx-2" onClick={(e) => handleAddNewCardModelClick(userCardList.id)}>
                                     <span className="me-1"><FaEdit /></span>Edit
                                 </div>
                                 <div className="text-light btn-link mx-2" onClick={(e) => handleDeleteCard(userCardList.id)}>
@@ -75,7 +78,7 @@ function CreditDebitCardsTab({ selectedTabItem,handleTabItemClick }) {
                     </div>
                 ))}
                 <div className="col-12 col-md-6 col-lg-4">
-                    <div className="account-card-new d-flex align-items-center rounded h-100 p-3 mb-4 mb-lg-0" onClick={() => handleAddNewCardModelClick()}>
+                    <div className="account-card-new d-flex align-items-center rounded h-100 p-3 mb-4 mb-lg-0" onClick={() => handleAddNewCardModelClick(null)}>
                         <p className="w-100 text-center lh-base py-3 my-4">
                             <span className="text-3"><FaPlusCircle /></span>
                             <span className="d-block text-body text-3">Add New Card</span>
@@ -83,7 +86,7 @@ function CreditDebitCardsTab({ selectedTabItem,handleTabItemClick }) {
                     </div>
                 </div>
             </div>
-            {selectedItem ? <AddNewCardModel selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : null}
+            {selectedItem ? <AddNewCardModel selectedItem={selectedItem} setSelectedItem={setSelectedItem} issetCardId={issetCardId} /> : null}
         </>
     );
 }

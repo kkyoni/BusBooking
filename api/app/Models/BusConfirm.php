@@ -22,6 +22,11 @@ class BusConfirm extends Model
         'booking_status'
     ];
 
+    public function bus_list()
+    {
+        return $this->hasMany('App\Models\Bus', 'id', 'bus_id');
+    }
+
     public function bus_seat_list()
     {
         return $this->hasMany('App\Models\BusSeat', 'seat_numbers', 'seat_numbers');

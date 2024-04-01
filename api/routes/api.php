@@ -30,6 +30,7 @@ Route::namespace('Api\User')->group(function () {
         Route::post('changePassword', [UserController::class, 'changePassword']);
         Route::post('addCard', [UserController::class, 'addCard']);
         Route::get('getCard', [UserController::class, 'getCard']);
+        Route::get('editCard', [UserController::class, 'editCard']);
         Route::get('getCardDelete/{id}', [UserController::class, 'getCardDelete']);
         Route::get('getBusType', [BusController::class, 'getBusType']);
         Route::get('getBusOperators', [BusController::class, 'getBusOperators']);

@@ -95,9 +95,7 @@ function Header() {
                 <div className="container">
                     <div className="header-row">
                         <div className="header-column justify-content-start">
-
-                            <div className="logo me-2 me-lg-3"> <a href="index.html" className="d-flex" title="Quickai - HTML Template"><img src={Logo} alt="Quickai" /></a> </div>
-
+                            <div className="logo me-2 me-lg-3"> <Link to={"/"} className="d-flex" title="Quickai - HTML Template"><img src={Logo} alt="Quickai" /></Link> </div>
                         </div>
                         <div className="header-column justify-content-end">
                             <nav className="primary-menu navbar navbar-expand-lg">

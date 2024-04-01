@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 import { IoIosCloseCircle } from "react-icons/io";
 import { Form, Input, Button, Checkbox, Select } from 'antd';
 import { UserAddCardActionHandler } from '../../../../../Redux/Actions/user/UserAddCard';
+import { UserEditCardListActionHandler } from '../../../../../Redux/Actions/user/UserEditCardList';
 import { useDispatch, useSelector } from 'react-redux';
 const { Option } = Select;
-function AddNewCardModel({ selectedItem, setSelectedItem }) {
+function AddNewCardModel({ selectedItem, setSelectedItem, issetCardId }) {
     let dispatch = useDispatch();
     const cardType = [
         { cardname: 'Visa' },
@@ -15,9 +16,31 @@ function AddNewCardModel({ selectedItem, setSelectedItem }) {
     ]
     const [form] = Form.useForm();
     const userAddCardData = useSelector((state) => state.UserAddCardData?.user_add_card_data);
+    const userEditCardListData = useSelector((state) => state.UserEditCardData?.user_edit_card_list_data);
     const onFinish = (values) => {
-        dispatch(UserAddCardActionHandler(values));
+        let card = values;
+        if (issetCardId) {
+            card = { ...values, id: issetCardId };
+        }
+        dispatch(UserAddCardActionHandler(card));
     };
+    useEffect(() => {
+        if (issetCardId) {
+            dispatch(UserEditCardListActionHandler(issetCardId));
+        }
+    }, [issetCardId]);
+    useEffect(() => {
+        if (userEditCardListData) {
+            const { card_type, card_number, expiry_date, cvv_number, card_holder_name } = userEditCardListData;
+            form.setFieldsValue({
+                card_type: card_type,
+                card_number: card_number,
+                expiry_date: expiry_date,
+                cvv_number: cvv_number,
+                card_holder_name: card_holder_name
+            });
+        }
+    }, [userEditCardListData]);
     return (
         <>
             {selectedItem ? <Modal id="add-new-card-details" class="modal fade show" title="Add a Card" open={selectedItem} onCancel={() => setSelectedItem(false)} style={{ display: "block", paddingLeft: "0px" }}>

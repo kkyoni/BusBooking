@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bus_seat', function (Blueprint $table) {
             $table->id();
             $table->string('bus_id');
+            $table->string('seat_collection');
             $table->string('seat_number');
             $table->string('class');
             $table->string('price');

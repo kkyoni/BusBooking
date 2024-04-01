@@ -176,3 +176,55 @@ export const UserCardDeleteApi = async (cardId) => {
         return err;
     }
 };
+
+export const BusBookingOrderDetailsListApi = async (type, count) => {
+    try {
+        const token = localStorage.getItem('token');
+        const res = await authAxios({
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'GET',
+            url: BASEURL + `getAllOrderDetails?type=${type}&count=${count}`,
+        });
+
+        return res;
+    } catch (err) {
+        return err;
+    }
+};
+
+export const UserEditCardListApi = async (cardId) => {
+    try {
+        const token = localStorage.getItem('token');
+        const res = await authAxios({
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'GET',
+            url: BASEURL + `editCard?cardId=${cardId}`,
+        });
+
+        return res;
+    } catch (err) {
+        return err;
+    }
+};
+
+export const UserChangePasswordApi = async (data) => {
+    try {
+        const token = localStorage.getItem('token');
+        const res = await authAxios({
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'POST',
+            url: BASEURL + 'changePassword',
+            data: JSON.stringify(data),
+        });
+
+        return res;
+    } catch (err) {
+        return err;
+    }
+};

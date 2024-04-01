@@ -1,35 +1,54 @@
 import React, { useState, useEffect } from 'react';
+import { Form, Input, Button, notification } from 'antd';
+import { UserChangePasswordActionHandler } from '../../../../Redux/Actions/user/UserChangePassword';
+import { useDispatch, useSelector } from 'react-redux';
 function ChangePasswordTab() {
+    let dispatch = useDispatch();
+    const [api, contextHolder] = notification.useNotification();
+    const userChangePasswordData = useSelector((state) => state.UserChangePasswordData?.user_change_password_data);
+    const openNotificationWithIcon = (type) => {
+        api[type]({
+            message: userChangePasswordData?.message,
+        });
+    };
+    const onFinish = (values) => {
+        dispatch(UserChangePasswordActionHandler(values));
+    };
+    useEffect(() => {
+        if (userChangePasswordData?.message) {
+            openNotificationWithIcon("success");
+        }
+    }, [userChangePasswordData]);
     return (
         <>
+            {contextHolder}
             <h4 className="mb-4">Change Password</h4>
             <hr className="mx-n4 mb-4" />
             <div className="row g-4">
-                <div className="col-lg-8">
-                    <form id="changePassword" method="post">
+                <div className="col-lg-12">
+                    <Form initialValues={{ old_password: '', new_password: '' }} onFinish={onFinish} id="changePassword">
                         <div className="mb-3">
-                            <label className="form-label" for="existingPassword">Existing Password</label>
-                            <input type="text" className="form-control" data-bv-field="existingpassword" id="existingPassword" required placeholder="Existing Password" />
+                            <label className="form-label" for="existingPassword">Old Password</label>
+                            <Form.Item name='old_password' rules={[{ required: true, message: 'Please input your Old Password!' }]}>
+                                <Input placeholder='Old Password' className="form-control" id="existingPassword" />
+                            </Form.Item>
                         </div>
                         <div className="mb-3">
                             <label className="form-label" for="newPassword">New Password</label>
-                            <input type="text" className="form-control" data-bv-field="newpassword" id="newPassword" required placeholder="New Password" />
+                            <Form.Item name='new_password' rules={[{ required: true, message: 'Please input your New Password!' }]}>
+                                <Input placeholder='New Password' className="form-control" id="newPassword" />
+                            </Form.Item>
                         </div>
                         <div className="mb-3">
                             <label className="form-label" for="existingPassword">Confirm Password</label>
-                            <input type="text" className="form-control" data-bv-field="confirmgpassword" id="confirmPassword" required placeholder="Confirm Password" />
+                            <Form.Item name='confirm_password' rules={[{ required: true, message: 'Please input your Confirm Password!' }]}>
+                                <Input placeholder='Confirm Password' className="form-control" id="confirmPassword" />
+                            </Form.Item>
                         </div>
-                        <button className="btn btn-primary" type="submit">Update Password</button>
-                    </form>
-                </div>
-                <div className="col-lg-4">
-                    <div className="bg-light-2 rounded p-4">
-                        <h3 className="text-4 mb-2">We value your Privacy</h3>
-                        <p className="mb-0">We will not sell or distribute your contact information. Read our <a href="#">Privacy Policy</a>.</p>
-                        <hr className="mx-n4" />
-                        <h3 className="text-4 mb-3">Billing Enquiries</h3>
-                        <p className="mb-0">Do not hesitate to reach our <a href="#">support team</a> if you have any queries.</p>
-                    </div>
+                        <Form.Item>
+                            <Button type='primary' htmlType='submit' block className='btn btn-primary' style={{ width: '208px', height: '50px' }}> Update Password </Button>
+                        </Form.Item>
+                    </Form>
                 </div>
             </div>
         </>

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import InformationTab from './Tab/InformationTab/InformationTab';
-import FavouritesTab from './Tab/FavouritesTab/FavouritesTab';
 import OrdersHistoryTab from './Tab/OrdersHistoryTab/OrdersHistoryTab';
 import CreditDebitCardsTab from './Tab/CreditDebitCardsTab/CreditDebitCardsTab';
 import ChangePasswordTab from './Tab/ChangePasswordTab/ChangePasswordTab';
-import NotificationsTab from './Tab/NotificationsTab/NotificationsTab';
 import { Link } from 'react-router-dom';
 function Profile() {
-    const MenuItem = ['Personal Information', 'Orders History', 'Credit or Debit Cards', 'Change Password', 'Notifications'];
+    const MenuItem = ['Personal Information', 'Orders History', 'Credit or Debit Cards', 'Change Password'];
     const [selectedTabItem, setSelectedTabItem] = useState(0);
     const handleTabItemClick = (item) => {
         console.log("asdfsdf", item);
@@ -51,7 +49,6 @@ function Profile() {
                                 {selectedTabItem === 1 ? <OrdersHistoryTab selectedTabItem={selectedTabItem} handleTabItemClick={handleTabItemClick} /> : null}
                                 {selectedTabItem === 2 ? <CreditDebitCardsTab selectedTabItem={selectedTabItem} handleTabItemClick={handleTabItemClick} /> : null}
                                 {selectedTabItem === 3 ? <ChangePasswordTab /> : null}
-                                {selectedTabItem === 4 ? <NotificationsTab /> : null}
                             </div>
                         </div>
                     </div>

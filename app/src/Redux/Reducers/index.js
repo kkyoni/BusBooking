@@ -10,6 +10,9 @@ import UserProfileUpdateReducer from "./user/UserProfileUpdateReducer";
 import UserAddCardReducer from "./user/UserAddCardReducer";
 import UserCardListReducer from "./user/UserCardListReducer";
 import UserCardDeleteReducer from "./user/UserCardDeleteReducer";
+import BusBookingOrderDetailsListReducer from "./user/BusBookingOrderDetailsListReducer";
+import UserEditCardReducer from "./user/UserEditCardReducer";
+import UserChangePasswordReducer from "./user/UserChangePasswordReducer";
 
 const rootReducer = combineReducers({
     LoginData: LoginReducer,
@@ -23,5 +26,8 @@ const rootReducer = combineReducers({
     UserAddCardData: UserAddCardReducer,
     UserCardListData: UserCardListReducer,
     UserCardDeleteData: UserCardDeleteReducer,
+    BusBookingOrderDetailsListData: BusBookingOrderDetailsListReducer,
+    UserEditCardData: UserEditCardReducer,
+    UserChangePasswordData: UserChangePasswordReducer,
 });
 export default rootReducer;
