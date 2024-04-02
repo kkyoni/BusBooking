@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
@@ -33,7 +33,7 @@ function ContactUs() {
                             <div class="bg-white shadow-md rounded p-4">
                                 <h2 class="text-6 mb-4">Get in touch</h2>
                                 <hr class="mx-n4 mb-4" />
-                                <p class="text-3">For Customer Support and Query, Get in touch with us: <a href="#">Help</a></p>
+                                <p class="text-3">For Customer Support and Query, Get in touch with us: <Link to={'/Help'}>Help</Link></p>
                                 <div class="featured-box style-1">
                                     <div class="featured-box-icon text-primary"> <FaMapMarkerAlt /></div>
                                     <h3>Quickai Inc.</h3>

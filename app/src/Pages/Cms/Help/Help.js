@@ -139,7 +139,7 @@ function Help() {
                                         <div class="col text-center text-sm-start">
                                             <div class="">
                                                 <h5 class="text-3 text-body">Can't find what you're looking for?</h5>
-                                                <p class="text-muted mb-0">We want to answer all of your queries. Get in touch and we'll get back to you as soon as we can. <a class="btn-link" href="">Contact us<span class="text-1 ms-1"><i class="fas fa-chevron-right"></i></span></a></p>
+                                                <p class="text-muted mb-0">We want to answer all of your queries. Get in touch and we'll get back to you as soon as we can. <Link class="btn-link" to={'/Contact-us'}>Contact us<span class="text-1 ms-1"><i class="fas fa-chevron-right"></i></span></Link></p>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +152,7 @@ function Help() {
                                         <div class="col text-center text-sm-start">
                                             <div class="">
                                                 <h5 class="text-3 text-body">Technical questions</h5>
-                                                <p class="text-muted mb-0">Have some technical questions? Hit us up on live chat or whatever. <a class="btn-link" href="">Click here<span class="text-1 ms-1"><i class="fas fa-chevron-right"></i></span></a></p>
+                                                <p class="text-muted mb-0">Have some technical questions? Hit us up on live chat or whatever. Get in touch and we'll get back to you as soon as we can <Link class="btn-link" to={'/Support'}>Click here<span class="text-1 ms-1"><i class="fas fa-chevron-right"></i></span></Link></p>
                                             </div>
                                         </div>
                                     </div>

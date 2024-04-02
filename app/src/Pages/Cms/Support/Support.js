@@ -1,9 +1,44 @@
-import React, { useState } from 'react';
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa6";
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Collapse } from 'antd';
 function Support() {
+    const booking = [
+        {
+            key: '1',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>How can I make a account?</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet. </div></div>,
+        },
+        {
+            key: '2',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>Is there any registration fee?</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet. </div></div>,
+        },
+        {
+            key: '3',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>Is my account information safe?</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div></div>,
+        },
+        {
+            key: '4',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>How does it work?</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div></div>,
+        },
+        {
+            key: '5',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>I did not receive the cashback</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div></div>,
+        },
+        {
+            key: '6',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>Forgot my password! What next?</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div></div>,
+        },
+        {
+            key: '7',
+            label: <h2 className="accordion-header" id="heading5" style={{ fontSize: '16px' }}>Closing Your Account</h2>,
+            children: <div id="faq5" className="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionBooking"><div className="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div></div>,
+        }
+    ];
     return (
         <>
             <section className="page-header page-header-dark bg-secondary">
@@ -67,64 +102,15 @@ function Support() {
                                 <hr class="mx-n4 mb-4" />
                                 <div class="accordion accordion-flush mt-n3" id="accordion">
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading1">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">How can I make a account?</button>
-                                        </h2>
-                                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet. </div>
-                                        </div>
+                                        <Collapse items={booking} />
+
                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading2">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Is there any registration fee?</button>
-                                        </h2>
-                                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna imperdiet. </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading3">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Is my account information safe?</button>
-                                        </h2>
-                                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading4">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">How does it work?</button>
-                                        </h2>
-                                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading5">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">I did not receive the cashback</button>
-                                        </h2>
-                                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading6">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">Forgot my password! What next?</button>
-                                        </h2>
-                                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading7">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">Closing Your Account</button>
-                                        </h2>
-                                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordion">
-                                            <div class="accordion-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <hr class="mx-n4" />
-                                <div class="d-grid"><a href="faq.html" class="btn btn-link btn-sm"><u>Click Here for more FAQ</u></a></div>
+                                <div class="d-grid">
+                                    <Link to={'/Faq'} class="btn btn-link btn-sm"><u>Click Here for more FAQ</u></Link>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -44,7 +44,7 @@ function Footer() {
             </section>
             <div className="container mt-4">
                 <div className="row g-4">
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <p>Payment</p>
                         <ul className="payments-types">
                             <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/visa.png" alt="visa" title="Visa" /></a></li>
@@ -54,14 +54,7 @@ function Footer() {
                             <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/mastercard.png" alt="discover" title="Discover" /></a></li>
                         </ul>
                     </div>
-                    <div className="col-md-4">
-                        <p>Subscribe</p>
-                        <div className="input-group newsletter">
-                            <input className="form-control" placeholder="Your Email Address" name="newsletterEmail" id="newsletterEmail" type="text" />
-                            <button className="btn btn-secondary shadow-none px-3" type="submit">Subscribe</button>
-                        </div>
-                    </div>
-                    <div className="col-md-4 d-flex align-items-md-end flex-column">
+                    <div className="col-md-6 d-flex align-items-md-end flex-column">
                         <p>Keep in touch</p>
                         <ul className="social-icons">
                             <li className="social-icons-facebook"><Link to="http://www.facebook.com/" target="_blank"><FaFacebookF /></Link></li>

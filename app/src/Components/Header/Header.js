@@ -3,20 +3,63 @@ import $ from 'jquery';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserProfileActionHandler } from '../../Redux/Actions/user/UserProfile';
-import { Dropdown, Space } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space, Menu } from 'antd';
+import { DownOutlined, AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 function Header() {
     const Logo = '/images/logo.png';
     let dispatch = useDispatch();
     let Navigate = useNavigate();
     const userProfileData = useSelector((state) => state.UserProfileData?.user_profile_data?.user);
-    const items = [
-        { key: '1', label: (<Link to={"/"}>About Us</Link>), },
-        { key: '2', label: (<Link to={"/"}>Help</Link>), },
-        { key: '3', label: (<Link to={"/"}>Faq</Link>), },
-        { key: '4', label: (<Link to={"/"}>Support</Link>), },
-        { key: '5', label: (<Link to={"/"}>Contact Us</Link>), },
-    ]
+    const item = [
+        {
+            label: 'Pages',
+            key: 'SubMenu',
+            children: [
+                { key: '1', label: (<Link to={"/About-Us"}>About Us</Link>), },
+                { key: '2', label: (<Link to={"/Help"}>Help</Link>), },
+                { key: '3', label: (<Link to={"/Faq"}>Faq</Link>), },
+                { key: '4', label: (<Link to={"/Support"}>Support</Link>), },
+                { key: '5', label: (<Link to={"/Contact-us"}>Contact Us</Link>), },
+            ],
+        },
+    ];
+    const profile_menu = [
+        {
+          label: 'Pages',
+          key: 'SubMenu',
+          icon: <SettingOutlined />,
+          children: [
+            {
+              type: 'group',
+              label: 'Item 1',
+              children: [
+                {
+                  label: 'Option 1',
+                  key: 'setting:1',
+                },
+                {
+                  label: 'Option 2',
+                  key: 'setting:2',
+                },
+              ],
+            },
+            {
+              type: 'group',
+              label: 'Item 2',
+              children: [
+                {
+                  label: 'Option 3',
+                  key: 'setting:3',
+                },
+                {
+                  label: 'Option 4',
+                  key: 'setting:4',
+                },
+              ],
+            },
+          ],
+        },
+      ];
 
     useEffect(() => {
         const handleDropdown = () => {
@@ -100,11 +143,7 @@ function Header() {
                         <div className="header-column justify-content-end">
                             <nav className="primary-menu navbar navbar-expand-lg">
                                 <div id="header-nav" className="collapse navbar-collapse">
-                                    <Dropdown menu={{ items }}>
-                                        <a onClick={(e) => e.preventDefault()}>
-                                            <Space>Pages<DownOutlined /></Space>
-                                        </a>
-                                    </Dropdown>
+                                    <Menu mode="horizontal" items={item} />
                                 </div>
                             </nav>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"> <span></span> <span></span> <span></span> </button>
@@ -113,11 +152,14 @@ function Header() {
                                 <ul className="navbar-nav">
                                     <li className="profile dropdown active">
                                         <a className="pe-0 dropdown-toggle" href="#" title="My Profile">
-                                            <span className="d-none d-sm-inline-block">My Profile</span>
+                                            {/* <span className="d-none d-sm-inline-block">My Profile</span> */}
+                                            <Menu mode="horizontal" items={profile_menu} />
                                             <span className="user-icon ms-sm-2">
                                                 <img src={`http://127.0.0.1:8000${userProfileData?.avatar}`} style={{ height: '36px', width: '36px', borderRadius: '50%' }} />
                                             </span>
                                         </a>
+                                        
+                                        {/* 
                                         <ul className="dropdown-menu">
                                             <li className="text-center text-3 py-2">Hi, {userProfileData?.name}</li>
                                             <li className="dropdown-divider mx-n3"></li>
@@ -125,7 +167,7 @@ function Header() {
                                             <li className="dropdown-divider mx-n3"></li>
                                             <li><a className="dropdown-item" href="help.html"><i className="fas fa-life-ring"></i>Need Help?</a></li>
                                             <li><a className="dropdown-item" href="#" onClick={logoutHandler}><i className="fas fa-sign-out-alt"></i>Log Out</a></li>
-                                        </ul>
+                                        </ul>*/}
                                     </li>
                                 </ul>
                             </nav>
