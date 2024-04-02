@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Slider, Button } from 'antd';
 function Price({ startRange, endRange, onChangePrice }) {
     const [isCollapsed, setIsCollapsed] = useState(true);

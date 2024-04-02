@@ -26,7 +26,7 @@ function Header() {
             label: 'Pages',
             key: 'SubMenu',
             icon: <span className="user-icon ms-sm-2">
-                <img src={`http://127.0.0.1:8000${userProfileData?.avatar}`} style={{ height: '36px', width: '36px', borderRadius: '50%' }} />
+                <img src={`http://127.0.0.1:8000${userProfileData?.avatar}`} alt='user' style={{ height: '36px', width: '36px', borderRadius: '50%' }} />
             </span>,
             children: [
                 { key: '1', label: `Hi, ${userProfileData?.name}` },
@@ -68,9 +68,9 @@ function Header() {
                             <nav className="login-signup navbar navbar-expand">
                                 <ul className="navbar-nav">
                                     <li className="profile dropdown active">
-                                        <a className="pe-0 dropdown-toggle" href="#" title="My Profile">
+                                        <Link className="pe-0 dropdown-toggle" title="My Profile">
                                             <Menu className="d-none d-sm-inline-block" mode="horizontal" items={profile_menu} />
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </nav>

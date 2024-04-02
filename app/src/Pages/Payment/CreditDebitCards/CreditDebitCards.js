@@ -90,7 +90,7 @@ function CreditDebitCards() {
                                                 <label className="form-check-label" for="save-card">Save my card Details.</label>
                                             </div>
                                         </div>
-                                        <div className="col-12 d-grid"> <a className="btn btn-primary" href="recharge-payment-success.html">Proceed to Pay $135</a> </div>
+                                        <div className="col-12 d-grid"> <Link to={'/'} className="btn btn-primary">Proceed to Pay $135</Link> </div>
                                     </div>
                                 </form>
                             </div>

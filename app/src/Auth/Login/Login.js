@@ -2,13 +2,10 @@ import React, { useEffect } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginActionHandler } from '../../Redux/Actions/common/Login';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import { useNavigate } from 'react-router-dom';
 import Index from '../Index';
-import { LockOutlined } from '@ant-design/icons';
 
 function Login() {
-    const mainLogo = '/assets/QA_Logo.svg';
     let dispatch = useDispatch();
     let Navigate = useNavigate();
 
@@ -25,105 +22,62 @@ function Login() {
         }
     }, [logindata]);
     return (
-<>
-            <div className='login-container'>
+        <>
+            <div id="content">
                 <Index />
-                {/* {contextHolder} */}
-                <div className='login-main auth-custom-scrollbar'>
-                    <div className='login-div '>
-                        <div className='center-img'>
-                            <img
-                                src={mainLogo}
-                                alt=''
-                                className='centered-image'
-                            />
-                        </div>
-
-                        <p className='back_text'>Welcome Back!</p>
-                        <p className='login_text-h'>Log in to your account</p>
-
-                        <Form
-                            name='loginForm'
-                            initialValues={{ email: '', password: '' }}
-                            onFinish={onFinish}
-                            className='login-class-form'>
-                            <label>Your email</label>
-                            <Form.Item
-                                name='email'
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please input your email!',
-                                    },
-                                    {
-                                        type: 'email',
-                                        message:
-                                            'Please enter a valid email address',
-                                    },
-                                ]}>
-                                <Input placeholder='Enter your email' />
-                            </Form.Item>
-
-                            <label>Password</label>
-                            <Form.Item
-                                name='password'
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: 'Please enter your password!',
-                                    },
-                                    {
-                                        min: 8,
-                                        message:
-                                            'Password must be at least 8 characters long',
-                                    },
-                                ]}>
-                                <Input.Password placeholder='Enter your password' />
-                            </Form.Item>
-
-                            <Form.Item>
-                                <Form.Item
-                                    name='remember'
-                                    valuePropName='checked'
-                                    noStyle>
-                                    <Checkbox className='mylogin-checked'>
-                                        Keep me signed in
-                                    </Checkbox>
-                                </Form.Item>
-
-                                <Link
-                                    to='/forgotPassword'
-                                    style={{
-                                        float: 'right',
-                                        color: '#ee3e38',
-                                    }}>
-                                    <LockOutlined
-                                        style={{
-                                            color: 'red',
-                                            marginRight: '8px',
-                                        }}
-                                    />
-                                    Forgot password
-                                </Link>
-                            </Form.Item>
-
-                            <Form.Item>
-                                <Button
-                                    type='primary'
-                                    htmlType='submit'
-                                    block
-                                    className='submit_login-btn'>
-                                    Login
-                                </Button>
-                            </Form.Item>
-
-                            <div className='first-time_div'>
-                                Signing in for the first time?{' '}
-                                <Link to='/signup'>
-                                    <span>Click Here</span>
-                                </Link>
+                <div class="container pt-5 pb-4">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-7 col-xl-5 mx-auto">
+                            <div class="bg-white shadow-md rounded p-3 pt-sm-4 pb-sm-5 px-sm-5">
+                                <p class="text-4 fw-300 text-muted text-center mb-4">Login</p>
+                                <Form name='loginForm' initialValues={{ email: '', password: '' }} onFinish={onFinish} className='login-class-form'>
+                                    <div class="mb-3">
+                                        <Form.Item name='email' rules={[{ required: true, message: 'Please input your email!' }, { type: 'email', message: 'Please enter a valid email address' }]}>
+                                            <Input placeholder='Enter your email' class="form-control" id="emailAddress" style={{ padding: '0.810rem 0.96rem' }} />
+                                        </Form.Item>
+                                    </div>
+                                    <div class="mb-3">
+                                        <Form.Item name='password' rules={[{ required: true, message: 'Please enter your password!' }, { min: 8, message: 'Password must be at least 8 characters long' }]}>
+                                            <Input.Password placeholder='Enter your password' class="form-control" id="loginPassword" style={{ padding: '0.810rem 0.96rem' }} />
+                                        </Form.Item>
+                                    </div>
+                                    <div class="row my-4">
+                                        <div class="col">
+                                            <div class="form-check text-3">
+                                                <Form.Item>
+                                                    <Form.Item name='remember' valuePropName='checked' noStyle>
+                                                        <Checkbox id="remember-me" className='form-check-input' />
+                                                        <label class="form-check-label text-2" for="remember-me">Remember Me</label>
+                                                    </Form.Item>
+                                                    {/* <div class="col text-2 text-end">
+                                                        <Link to='/forgotPassword' class="btn-link">Forgot password ?</Link>
+                                                    </div> */}
+                                                </Form.Item>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid my-4">
+                                        <Form.Item>
+                                            <Button type='primary' htmlType='submit' block className='btn btn-primary' style={{ height: '50px' }}>Login</Button>
+                                        </Form.Item>
+                                    </div>
+                                </Form>
+                                {/* <div class="d-flex align-items-center my-3">
+                                    <hr class="flex-grow-1" />
+                                    <span class="mx-2 text-2 text-muted">Or Login with Social Profile</span>
+                                    <hr class="flex-grow-1" />
+                                </div> */}
+                                {/* <div class="d-flex  flex-column align-items-center mb-3">
+                                    <ul class="social-icons social-icons-colored social-icons-circle">
+                                        <li class="social-icons-facebook"><a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Log In with Facebook" aria-label="Log In with Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li class="social-icons-twitter"><a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Log In with Twitter" aria-label="Log In with Twitter"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="social-icons-google"><a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Log In with Google" aria-label="Log In with Google"><i class="fab fa-google"></i></a></li>
+                                        <li class="social-icons-linkedin"><a href="#" data-bs-toggle="tooltip" title="" data-bs-original-title="Log In with Linkedin" aria-label="Log In with Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div> */}
+                                {/* <p class="text-2 text-center mb-0">New to Quickai? <a class="btn-link" href="signup.html">Sign Up</a></p> */}
                             </div>
-                        </Form>
+                        </div>
                     </div>
                 </div>
             </div>

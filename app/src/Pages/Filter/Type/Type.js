@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Checkbox, Button } from 'antd';
 function Type({ TypeData, onChangeType }) {
     const [isCollapsed, setIsCollapsed] = useState(true);

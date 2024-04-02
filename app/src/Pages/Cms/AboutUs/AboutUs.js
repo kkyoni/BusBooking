@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaRegThumbsUp } from "react-icons/fa";
 import { FaPaperPlane } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";

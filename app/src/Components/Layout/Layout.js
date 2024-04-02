@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React from "react";
 import './bootstrap.min.css';
 import "./Layout.css";
 import Footer from "../Footer/Footer";

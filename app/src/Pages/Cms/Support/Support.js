@@ -57,17 +57,17 @@ function Support() {
                 </div>
             </section>
             <div id="content">
-                <div class="container">
-                    <div class="row g-4">
-                        <div class="col-lg-8">
-                            <div class="bg-white shadow-md rounded p-4">
-                                <h2 class="text-6 mb-4">Send a Request</h2>
-                                <hr class="mx-n4 mb-4" />
-                                <p class="text-3">Please fill out the form below. we will get back to you within a couple of hours.</p>
+                <div className="container">
+                    <div className="row g-4">
+                        <div className="col-lg-8">
+                            <div className="bg-white shadow-md rounded p-4">
+                                <h2 className="text-6 mb-4">Send a Request</h2>
+                                <hr className="mx-n4 mb-4" />
+                                <p className="text-3">Please fill out the form below. we will get back to you within a couple of hours.</p>
                                 <form id="recharge-bill" method="post">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="subject">Subject</label>
-                                        <select class="form-select" id="subject" required="">
+                                    <div className="mb-3">
+                                        <label className="form-label" for="subject">Subject</label>
+                                        <select className="form-select" id="subject" required="">
                                             <option value="">Select Your Subject</option>
                                             <option>Recharge &amp; Bill</option>
                                             <option>Booking</option>
@@ -76,40 +76,40 @@ function Support() {
                                             <option>Other</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="yourName">Your Name</label>
-                                        <input type="text" class="form-control" id="yourName" required="" placeholder="Enter Your Name" />
+                                    <div className="mb-3">
+                                        <label className="form-label" for="yourName">Your Name</label>
+                                        <input type="text" className="form-control" id="yourName" required="" placeholder="Enter Your Name" />
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="yourEmail">Your Email</label>
-                                        <input type="email" class="form-control" id="yourEmail" required="" placeholder="Enter Email Id" />
+                                    <div className="mb-3">
+                                        <label className="form-label" for="yourEmail">Your Email</label>
+                                        <input type="email" className="form-control" id="yourEmail" required="" placeholder="Enter Email Id" />
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="mobileNumber">Mobile Number</label>
-                                        <input type="text" class="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Enter Mobile Number" />
+                                    <div className="mb-3">
+                                        <label className="form-label" for="mobileNumber">Mobile Number</label>
+                                        <input type="text" className="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Enter Mobile Number" />
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="yourProblem">Your Query</label>
-                                        <textarea class="form-control" rows="5" id="yourProblem" required="" placeholder="Specify your query"></textarea>
+                                    <div className="mb-3">
+                                        <label className="form-label" for="yourProblem">Your Query</label>
+                                        <textarea className="form-control" rows="5" id="yourProblem" required="" placeholder="Specify your query"></textarea>
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <button className="btn btn-primary" type="submit">Submit</button>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="bg-white shadow-md rounded p-4">
-                                <h2 class="text-6 mb-4">FAQ</h2>
-                                <hr class="mx-n4 mb-4" />
-                                <div class="accordion accordion-flush mt-n3" id="accordion">
-                                    <div class="accordion-item">
+                        <div className="col-lg-4">
+                            <div className="bg-white shadow-md rounded p-4">
+                                <h2 className="text-6 mb-4">FAQ</h2>
+                                <hr className="mx-n4 mb-4" />
+                                <div className="accordion accordion-flush mt-n3" id="accordion">
+                                    <div className="accordion-item">
                                         <Collapse items={booking} />
 
                                     </div>
 
                                 </div>
-                                <hr class="mx-n4" />
-                                <div class="d-grid">
-                                    <Link to={'/Faq'} class="btn btn-link btn-sm"><u>Click Here for more FAQ</u></Link>
+                                <hr className="mx-n4" />
+                                <div className="d-grid">
+                                    <Link to={'/Faq'} className="btn btn-link btn-sm"><u>Click Here for more FAQ</u></Link>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BusTab from "./Tab/BusTab/BusTab";
+import { Carousel } from 'antd';
 
 function Dashboard() {
     const [selectedItem, setSelectedItem] = useState('bus');
@@ -33,8 +34,14 @@ function Dashboard() {
 
                         <div className="col-lg-2">
                             <div className="row">
-                                <div className="col-6 col-lg-12 text-center"> <Link to={'/'}><img src="images/slider/small-banner-9.jpg" alt="" title="" className="img-fluid rounded shadow-md" /></Link> </div>
-                                <div className="col-6 col-lg-12 mt-lg-3 text-center"> <Link to={'/'}><img src="images/slider/small-banner-10.jpg" alt="" title="" className="img-fluid rounded shadow-md" /></Link> </div>
+                                <Carousel>
+                                    <div>
+                                        <div className="col-6 col-lg-12 text-center"> <Link to={'/'}><img src="images/small-banner-9.jpg" alt="" title="" className="img-fluid rounded shadow-md" /></Link> </div>
+                                    </div>
+                                    <div>
+                                        <div className="col-6 col-lg-12 mt-lg-3 text-center"> <Link to={'/'}><img src="images/small-banner-10.jpg" alt="" title="" className="img-fluid rounded shadow-md" /></Link> </div>
+                                    </div>
+                                </Carousel>
                             </div>
                         </div>
                     </div>

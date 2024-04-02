@@ -28,7 +28,7 @@ function BusConfirmDetails() {
                         <div className="col-md-4">
                             <ul className="breadcrumb justify-content-start justify-content-md-end mb-0">
                                 <li><Link to={"/"}>Home</Link></li>
-                                <li><a href="booking-bus.html">Bus</a></li>
+                                <li><Link to={"#"}>Bus</Link></li>
                                 <li className="active">Bus Confirm Details</li>
                             </ul>
                         </div>
@@ -101,19 +101,6 @@ function BusConfirmDetails() {
                                 </ul>
                                 <div className="text-dark bg-light-4 text-4 fw-600 p-3"> Total Amount <span className="float-end text-6">${busConfirmDetailsListData.priceSum}</span> </div>
                                 <br />
-                                {/* <h3 className="text-4 mb-3 mt-4">Promo Code</h3>
-                                <div className="input-group mb-3">
-                                    <input className="form-control" placeholder="Promo Code" aria-label="Promo Code" type="text" />
-                                    <button className="btn btn-secondary shadow-none px-3" type="submit">APPLY</button>
-                                </div>
-                                <ul className="promo-code">
-                                    <li><span className="d-block text-3 fw-600">FLTOFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                    <li><span className="d-block text-3 fw-600">HOTOFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                    <li><span className="d-block text-3 fw-600">SUMMEROFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                    <li><span className="d-block text-3 fw-600">BIGOFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                    <li><span className="d-block text-3 fw-600">FLTOFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                    <li><span className="d-block text-3 fw-600">FLTOFFER</span>Up to $500 Off on your booking. Hurry! Limited period offer. <a className="text-1" href="">Terms & Conditions</a></li>
-                                </ul> */}
                                 <div className="d-grid">
                                     <Button className="btn btn-primary">Proceed To Payment</Button>
                                 </div>

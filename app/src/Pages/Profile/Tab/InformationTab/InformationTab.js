@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserProfileUpdateActionHandler } from '../../../../Redux/Actions/user/UserProfileUpdate';
 function InformationTab() {
     let dispatch = useDispatch();
     const [form] = Form.useForm();
     const userProfileData = useSelector((state) => state.UserProfileData?.user_profile_data?.user);
-    const userProfileUpdateData = useSelector((state) => state.UserProfileUpdateData?.user_profile_update_data?.user);
+    // const userProfileUpdateData = useSelector((state) => state.UserProfileUpdateData?.user_profile_update_data?.user);
     const onFinish = (values) => {
         dispatch(UserProfileUpdateActionHandler(values));
     };

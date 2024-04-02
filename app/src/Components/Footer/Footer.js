@@ -4,6 +4,10 @@ import { FaGoogle } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
+import { FaLock } from "react-icons/fa6";
+import { FaThumbsUp } from "react-icons/fa";
+import { FaBullhorn } from "react-icons/fa";
+import { FaRegLifeRing } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function Footer() {
     return (
@@ -13,30 +17,30 @@ function Footer() {
                     <div className="row">
                         <div className="col-sm-6 col-md-3">
                             <div className="featured-box text-center">
-                                <div className="featured-box-icon"> <i className="fas fa-lock"></i> </div>
+                                <div className="featured-box-icon"> <FaLock /> </div>
                                 <h4>100% Secure Payments</h4>
                                 <p>Moving your card details to a much more secured place.</p>
                             </div>
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className="featured-box text-center">
-                                <div className="featured-box-icon"> <i className="fas fa-thumbs-up"></i> </div>
+                                <div className="featured-box-icon"> <FaThumbsUp /> </div>
                                 <h4>Trust pay</h4>
                                 <p>100% Payment Protection. Easy Return Policy.</p>
                             </div>
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className="featured-box text-center">
-                                <div className="featured-box-icon"> <i className="fas fa-bullhorn"></i> </div>
+                                <div className="featured-box-icon"> <FaBullhorn /> </div>
                                 <h4>Refer & Earn</h4>
                                 <p>Invite a friend to sign up and earn up to $100.</p>
                             </div>
                         </div>
                         <div className="col-sm-6 col-md-3">
                             <div className="featured-box text-center">
-                                <div className="featured-box-icon"> <i className="far fa-life-ring"></i> </div>
+                                <div className="featured-box-icon"> <FaRegLifeRing /> </div>
                                 <h4>24X7 Support</h4>
-                                <p>We're here to help. Have a query and need help ? <a href="#">Click here</a></p>
+                                <p>We're here to help. Have a query and need help ? <Link to={"/Support"}>Click here</Link></p>
                             </div>
                         </div>
                     </div>
@@ -47,11 +51,11 @@ function Footer() {
                     <div className="col-md-6">
                         <p>Payment</p>
                         <ul className="payments-types">
-                            <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/visa.png" alt="visa" title="Visa" /></a></li>
-                            <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/discover.png" alt="discover" title="Discover" /></a></li>
-                            <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/paypal.png" alt="paypal" title="PayPal" /></a></li>
-                            <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/american.png" alt="american express" title="American Express" /></a></li>
-                            <li><a href="#" target="_blank"> <img data-bs-toggle="tooltip" src="images/mastercard.png" alt="discover" title="Discover" /></a></li>
+                            <li><img src="images/visa.png" alt="visa" /></li>
+                            <li><img src="images/discover.png" alt="discover" /></li>
+                            <li><img src="images/paypal.png" alt="paypal" /></li>
+                            <li><img src="images/american.png" alt="american express" /></li>
+                            <li><img src="images/mastercard.png" alt="discover" /></li>
                         </ul>
                     </div>
                     <div className="col-md-6 d-flex align-items-md-end flex-column">
@@ -76,7 +80,7 @@ function Footer() {
                         <li className="nav-item"> <Link to={"Support"} className="nav-link">Support</Link> </li>
                         <li className="nav-item"> <Link to={"Help"} className="nav-link">Help</Link> </li>
                     </ul>
-                    <p className="copyright-text">Copyright © 2022 <a href="#">Quickai</a>. All Rights Reserved.</p>
+                    <p className="copyright-text">Copyright © 2022 <Link to={'/'}>Quickai</Link>. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

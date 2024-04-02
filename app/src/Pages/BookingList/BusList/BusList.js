@@ -121,7 +121,7 @@ function BusList() {
                         <div className="col-md-4">
                             <ul className="breadcrumb justify-content-start justify-content-md-end mb-0">
                                 <li><Link to={"/"}>Home</Link></li>
-                                <li><a href="booking-bus.html">Bus</a></li>
+                                <li><Link to={"#"}>Bus</Link></li>
                                 <li className="active">Bus List Page</li>
                             </ul>
                         </div>

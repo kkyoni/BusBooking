@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Modal } from 'antd';
-import { IoIosCloseCircle } from "react-icons/io";
-import { Form, Input, Button, Checkbox, Select } from 'antd';
+import { Form, Input, Button, Select } from 'antd';
 import { UserAddCardActionHandler } from '../../../../../Redux/Actions/user/UserAddCard';
 import { UserEditCardListActionHandler } from '../../../../../Redux/Actions/user/UserEditCardList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +14,6 @@ function AddNewCardModel({ selectedItem, setSelectedItem, issetCardId }) {
         { cardname: 'Discover' }
     ]
     const [form] = Form.useForm();
-    const userAddCardData = useSelector((state) => state.UserAddCardData?.user_add_card_data);
     const userEditCardListData = useSelector((state) => state.UserEditCardData?.user_edit_card_list_data);
     const onFinish = (values) => {
         let card = values;
@@ -43,15 +41,15 @@ function AddNewCardModel({ selectedItem, setSelectedItem, issetCardId }) {
     }, [userEditCardListData]);
     return (
         <>
-            {selectedItem ? <Modal id="add-new-card-details" class="modal fade show" title="Add a Card" open={selectedItem} onCancel={() => setSelectedItem(false)} style={{ display: "block", paddingLeft: "0px" }}>
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body p-4">
+            {selectedItem ? <Modal id="add-new-card-details" className="modal fade show" title="Add a Card" open={selectedItem} onCancel={() => setSelectedItem(false)} style={{ display: "block", paddingLeft: "0px" }}>
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                        <div className="modal-body p-4">
                             <Form form={form} initialValues={{ card_type: '', card_number: '', expiry_date: '', cvv_number: '', card_holder_name: '' }} onFinish={onFinish} id="addCard">
-                                <div class="row g-3">
-                                    <div class="col-12">
+                                <div className="row g-3">
+                                    <div className="col-12">
                                         <div>
-                                            <label for="cardType" class="form-label">Card Type</label>
+                                            <label for="cardType" className="form-label">Card Type</label>
                                             <Form.Item name="card_type" rules={[{ required: true, message: "Please select a Card Type!" }]}>
                                                 <Select id="cardType" className="uploadcomputer-select">
                                                     {cardType && cardType.map((cardTypeName) => (
@@ -61,31 +59,31 @@ function AddNewCardModel({ selectedItem, setSelectedItem, issetCardId }) {
                                             </Form.Item>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <label for="cardNumber" class="form-label">Card Number</label>
+                                    <div className="col-12">
+                                        <label for="cardNumber" className="form-label">Card Number</label>
                                         <Form.Item name='card_number' rules={[{ required: true, message: 'Please input your Card Number!' }]}>
                                             <Input placeholder='Card Number' className="form-control" id="cardNumber" />
                                         </Form.Item>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label for="expiryDate" class="form-label">Expiry Date</label>
+                                    <div className="col-lg-6">
+                                        <label for="expiryDate" className="form-label">Expiry Date</label>
                                         <Form.Item name='expiry_date' rules={[{ required: true, message: 'Please input your Card Number!' }]}>
                                             <Input placeholder='MM/YY' className="form-control" id="expiryDate" />
                                         </Form.Item>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label for="cvvNumber" class="form-label">CVV</label>
+                                    <div className="col-lg-6">
+                                        <label for="cvvNumber" className="form-label">CVV</label>
                                         <Form.Item name='cvv_number' rules={[{ required: true, message: 'Please input your CVV!' }, { min: 3, message: 'CVV must be at least 3 characters long' }]}>
                                             <Input placeholder='CVV (3 digits)' className="form-control" id="cvvNumber" />
                                         </Form.Item>
                                     </div>
-                                    <div class="col-12">
-                                        <label for="cardHolderName" class="form-label">Card Holder Name</label>
+                                    <div className="col-12">
+                                        <label for="cardHolderName" className="form-label">Card Holder Name</label>
                                         <Form.Item name='card_holder_name' rules={[{ required: true, message: 'Please input your CVV!' }]}>
                                             <Input placeholder='Card Holder Name' className="form-control" id="cardholdername" />
                                         </Form.Item>
                                     </div>
-                                    <div class="col-12 d-grid mt-4">
+                                    <div className="col-12 d-grid mt-4">
                                         <Form.Item>
                                             <Button type='primary' htmlType='submit' block className='btn btn-primary' style={{ width: '422px', height: '50px' }}> Add Card </Button>
                                         </Form.Item>

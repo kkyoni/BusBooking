@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import React from 'react';
 import { Link } from 'react-router-dom';
 function NotFound() {
     return (
@@ -25,7 +24,7 @@ function NotFound() {
                         <h2 className="text-25 fw-600 mb-0">404</h2>
                         <h3 className="text-6 fw-600 mb-3">oops! The page you requested was not found!</h3>
                         <p className="text-3 text-muted">The page you are looking for was moved, removed, renamed or might never existed.</p>
-                        <a href="#" className="btn btn-primary shadow-none px-5 m-2">Home</a> <a href="#" className="btn btn-outline-dark shadow-none px-5 m-2">Back</a> </div>
+                        <Link to={'/'} className="btn btn-primary shadow-none px-5 m-2">Home</Link> <Link to={'/'} className="btn btn-outline-dark shadow-none px-5 m-2">Back</Link> </div>
                 </section>
             </div>
         </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Form, Input, Button, notification } from 'antd';
 import { UserChangePasswordActionHandler } from '../../../../Redux/Actions/user/UserChangePassword';
 import { useDispatch, useSelector } from 'react-redux';

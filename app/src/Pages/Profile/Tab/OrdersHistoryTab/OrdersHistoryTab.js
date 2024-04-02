@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AllTab from './AllTab/AllTab';
 import ConfirmTab from './ConfirmTab/ConfirmTab';
 import PendingTab from './PendingTab/PendingTab';
